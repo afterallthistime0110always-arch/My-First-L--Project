@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="mySong" src="Malare Ninne Ringtone.mp3" preload="auto"></audio>
+    
+    <header class="navbar">
+        <div class="logo">💖 For My Love</div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Memories</a>
+            <a href="#">Gallery</a>
+            <a href="#">Our Story</a>
+            <a href="#">Letters</a>
+            <button class="surprise-btn">Surprise 🎁</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <p class="sub-title">✨ HAPPY BIRTHDAY 🎂</p>
+            <h1>Happy Birthday <br><span class="cursive">To My Love</span></h1>
+            <p class="tagline">I'm so lucky to have you in my life. 💖</p>
+            <div class="cta-buttons">
+                <button class="btn-secondary" onclick="togglePlay()">▶ Play Our Song</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Our Beautiful Memories</h2>
+        
+        <div class="filters">
+            <span class="active">All</span>
+            <span>Us</span>
+            <span>Special Moments</span>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="grid-item tall" style="background-image: url('DOMINO.jpeg');"></div>
+            <div class="grid-item tall" style="background-image: url('AVATAR.jpeg');"></div>
+            <div class="grid-item wide" style="background-image: url('mall.jpeg');"></div>
+            <div class="grid-item tall" style="background-image: url('chat.jpeg');"></div>
+            <div class="grid-item tall" style="background-image: url('race.jpeg');"></div>
+            <div class="grid-item wide" style="background-image: url('toppp.jpeg');"></div>
+            <div class="grid-item normal" style="background-image: url('avat.jpeg');"></div>
+            <div class="grid-item normal" style="background-image: url('domi.jpeg');"></div>
+            <div class="grid-item wide" style="background-image: url('icee.jpeg');"></div>
+        </div>
+    </section>
+
+    <footer class="footer-quote">
+        <div class="quote-container">
+            <span class="quote-icon">“</span>
+            <p class="quote-text">You Are Not just My Teacher,<br>You Are My first Love , Best Friend , Mentor , Soulmate.</p>
+            <p class="cursive-love">I Love You</p>
+        </div>
+    </footer>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var btn = document.querySelector(".btn-secondary");
+
+        function togglePlay() {
+            if (mySong.paused) {
+                mySong.play();
+                btn.innerHTML = "⏸ Pause Our Song";
+            } else {
+                mySong.pause();
+                btn.innerHTML = "▶ Play Our Song";
+            }
+        }
+    </script>
+</body>
+</html>

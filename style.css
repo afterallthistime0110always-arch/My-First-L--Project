@@ -1,0 +1,314 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d020d; /* Ultra dark pink/black theme */
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Navbar Style */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(13, 2, 13, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ff4da6;
+    text-shadow: 0 0 10px #ff4da6;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+nav a:hover, nav a.active {
+    color: #ff4da6;
+    text-shadow: 0 0 8px #ff4da6;
+}
+
+.surprise-btn {
+    background: linear-gradient(45deg, #ff4d4d, #ff007f);
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+    transition: 0.3s;
+    margin-left: 10px;
+}
+
+.surprise-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.8);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 90vh;
+    height: auto;
+    background: linear-gradient(rgba(13, 2, 13, 0.45), #0d020d), 
+                url('hug.jpeg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 60px 20px;
+}
+
+.hero-overlay {
+    width: 100%;
+    max-width: 800px;
+}
+
+.hero-overlay .sub-title {
+    display: none; /* Blocked as per your request */
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #ff99cc;
+}
+
+.hero-overlay h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    margin: 15px 0;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.cursive {
+    font-family: 'Great Vibes', cursive;
+    color: #ff007f;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    text-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.tagline {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #ccc;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.cta-buttons button {
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid #ff007f !important;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.2), inset 0 0 5px rgba(255, 0, 127, 0.3);
+}
+
+.cta-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
+    background-color: rgba(255, 0, 127, 0.1);
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-section h2::before, .gallery-section h2::after {
+    content: ' 🌸 ';
+}
+
+/* Filters */
+.filters {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filters span {
+    padding: 6px 18px;
+    border: 1px solid #ff007f;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #ff99cc;
+}
+
+.filters span.active, .filters span:hover {
+    background-color: #ff007f;
+    color: white;
+    box-shadow: 0 0 10px #ff007f;
+}
+
+/* Bento Grid Setup */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 220px;
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 0, 127, 0.25);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    transform: scale(1.02);
+    border-color: #ff007f;
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
+}
+
+/* Grid layout rules for premium layouts */
+.wide { grid-column: span 2; }
+.tall { grid-row: span 2; }
+.normal { grid-column: span 1; grid-row: span 1; }
+
+/* Footer Quote Card */
+.footer-quote {
+    padding: 60px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-container {
+    background: linear-gradient(135deg, rgba(30, 2, 25, 0.85), rgba(15, 2, 15, 0.95)), 
+                url('coll.jpeg') no-repeat center center/cover; 
+    border: 1px solid rgba(255, 0, 127, 0.3);
+    border-radius: 20px;
+    padding: clamp(20px, 5vw, 40px);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 0, 127, 0.15);
+}
+
+.quote-icon {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: #ff007f;
+    line-height: 1;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.quote-text {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.cursive-love {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #ff007f;
+    text-shadow: 0 0 10px #ff007f;
+}
+
+/* ===================================================
+   Media Queries for Seamless Mobile & Tablet View
+   =================================================== */
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-auto-rows: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar stack alignment for mobile */
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+        position: absolute; /* Stops overlapping issue on small devices */
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    nav a {
+        margin: 0 8px;
+        font-size: 0.85rem;
+    }
+
+    .surprise-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+        margin-left: 0;
+    }
+
+    .hero {
+        padding-top: 160px; /* Gives spacing for stacked mobile navbar */
+    }
+
+    /* Converts Bento layout into a safe single column to avoid layout breaks */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+    
+    .wide, .tall, .normal {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+}
