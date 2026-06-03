@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Audio tag for the background romantic song -->
     <audio id="mySong" src="Malare Ninne Ringtone.mp3" preload="auto"></audio>
     
     <header class="navbar">
@@ -18,7 +19,7 @@
             <a href="#">Gallery</a>
             <a href="#">Our Story</a>
             <a href="#">Letters</a>
-            <button class="surprise-btn">Surprise 🎁</button>
+            <button class="surprise-btn" onclick="showSurprise()">Surprise 🎁</button>
         </nav>
     </header>
 
@@ -46,7 +47,7 @@
             <div class="grid-item tall" style="background-image: url('DOMINO.jpeg');"></div>
             <div class="grid-item tall" style="background-image: url('AVATAR.jpeg');"></div>
             <div class="grid-item wide" style="background-image: url('mall.jpeg');"></div>
-            <div class="grid-item tall" style="background-image: url('chat.jpeg');"></div>
+            <div class="grid-item tall" style="background-image: url('domiflowers.jpeg');"></div>
             <div class="grid-item tall" style="background-image: url('race.jpeg');"></div>
             <div class="grid-item wide" style="background-image: url('toppp.jpeg');"></div>
             <div class="grid-item normal" style="background-image: url('avat.jpeg');"></div>
@@ -63,10 +64,12 @@
         </div>
     </footer>
 
+    <!-- JavaScript Section with Music & Advanced Surprise Effects -->
     <script>
         var mySong = document.getElementById("mySong");
         var btn = document.querySelector(".btn-secondary");
 
+        // 1. Play/Pause Music function logic
         function togglePlay() {
             if (mySong.paused) {
                 mySong.play();
@@ -74,6 +77,47 @@
             } else {
                 mySong.pause();
                 btn.innerHTML = "▶ Play Our Song";
+            }
+        }
+
+        // 2. Surprise Floating + One Standard Static Photo Logic
+        function showSurprise() {
+            // 🌟 Main standard photo (Idhu center la apdiye nirkum)
+            const mainStaticImage = 'schoolpic.jpeg'; 
+            
+            // Other floating photos
+            const surpriseImages = ['DOMINO.jpeg', 'mall.jpeg', 'domiflowers.jpeg', 'race.jpeg', 'toppp.jpeg', 'avat.jpeg', 'domi.jpeg', 'icee.jpeg'];
+            
+            // Clear old static photo if it already exists to prevent duplication
+            const oldStatic = document.querySelector('.static-surprise-center');
+            if (oldStatic) oldStatic.remove();
+
+            // Create and append the Main Standard Center Photo
+            const staticImg = document.createElement('img');
+            staticImg.src = mainStaticImage;
+            staticImg.className = 'static-surprise-center';
+            document.body.appendChild(staticImg);
+            
+            // Standard photo mella fade out aagi remove aaguradhukana timer setup (5 seconds)
+            setTimeout(() => {
+                staticImg.style.opacity = '0';
+                setTimeout(() => staticImg.remove(), 1000);
+            }, 5000);
+
+            // Create 15 Floating Random Grid Photos
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const img = document.createElement('img');
+                    img.src = surpriseImages[Math.floor(Math.random() * surpriseImages.length)];
+                    img.className = 'floating-surprise';
+                    
+                    img.style.left = Math.random() * 80 + 10 + '%';
+                    img.style.top = Math.random() * 80 + 10 + '%';
+                    
+                    document.body.appendChild(img);
+                    
+                    setTimeout(() => img.remove(), 2500);
+                }, i * 150);
             }
         }
     </script>
